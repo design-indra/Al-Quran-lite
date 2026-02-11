@@ -1,34 +1,46 @@
 :root {
-  --bg: #0b1511;
-  --card: #10241b;
-  --border: #2f6b4f;
-  --text: #e6f6ee;
-  --subtext: #baf5cc;
-  --accent: #80d6a7;
+  /* =========================
+     Tema Malam (default)
+  ========================= */
+  --bg: #0b1511;           /* background utama */
+  --card: #10241b;         /* card / kotak */
+  --border: #2f6b4f;       /* border card */
+  --text: #e6f6ee;         /* teks utama */
+  --subtext: #baf5cc;      /* teks terjemahan / subtext */
+  --accent: #80d6a7;       /* tombol, hover, link */
 }
 
 body.light {
-  --bg: #f6f9f7;
-  --card: #ffffff;
-  --border: #cdded6;
-  --text: #1c2b24;
-  --subtext: #4f6f61;
-  --accent: #2f8f6b;
+  /* =========================
+     Tema Siang
+  ========================= */
+  --bg: #ffffff;           /* background putih */
+  --card: #f9f9f9;         /* card kontras */
+  --border: #d0d0d0;       /* border card */
+  --text: #1c2b24;         /* teks utama gelap */
+  --subtext: #4f6f61;      /* teks sub / terjemahan */
+  --accent: #2f8f6b;       /* tombol, hover, link */
 }
 
+/* =========================
+   GLOBAL
+========================= */
 * {
   box-sizing: border-box;
   font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   background: var(--bg);
   color: var(--text);
   transition: 0.3s;
 }
 
-/* SEARCH */
+/* =========================
+   SEARCH
+========================= */
 .top-search {
   text-align: center;
   padding: 12px;
@@ -44,12 +56,19 @@ body {
   color: var(--text);
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+}
+
+.header h1 {
+  color: var(--text);
+  font-size: 22px;
 }
 
 .header-actions {
@@ -66,7 +85,9 @@ select, .theme-btn {
   cursor: pointer;
 }
 
-/* QUOTES */
+/* =========================
+   QUOTES
+========================= */
 .quotes {
   padding: 16px;
   text-align: center;
@@ -74,7 +95,9 @@ select, .theme-btn {
   color: var(--subtext);
 }
 
-/* GRID SURAH */
+/* =========================
+   GRID SURAH
+========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -95,7 +118,9 @@ select, .theme-btn {
   box-shadow: 0 0 16px var(--accent);
 }
 
-/* AYAT */
+/* =========================
+   AYAH
+========================= */
 #ayah-view {
   padding: 16px;
 }
@@ -109,12 +134,17 @@ select, .theme-btn {
 }
 
 .arab {
+  font-family: 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  unicode-bidi: embed;
   font-size: 22px;
   text-align: right;
+  line-height: 1.6;
 }
 
 .translation {
   color: var(--subtext);
+  margin-top: 6px;
 }
 
 .play-btn {
@@ -125,7 +155,9 @@ select, .theme-btn {
   cursor: pointer;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 .footer {
   padding: 24px;
   text-align: center;
@@ -138,56 +170,61 @@ select, .theme-btn {
 }
 
 .footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 12px;
-  color: var(--accent);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* grid responsive */
+  gap: 12px;
+  margin-top: 16px;
 }
 
+.footer-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 12px;
+  background: var(--card);        /* warna kotak sesuai tema */
+  color: var(--accent);           /* warna teks sesuai tema */
+  text-decoration: none;
+  border-radius: 12px;            /* sudut kotak membulat */
+  border: 1px solid var(--border);
+  transition: 0.3s;
+  box-shadow: 0 0 0 rgba(0,0,0,0); /* default shadow */
+}
+
+/* Hover effect: kotak menyala */
+.footer-links a:hover {
+  box-shadow: 0 0 10px var(--accent); /* glow sesuai warna accent */
+  transform: translateY(-2px);        /* sedikit naik efek hover */
+}
+
+/* =========================
+   HIDDEN
+========================= */
 .hidden {
   display: none;
 }
 
+/* =========================
+   HR / GARIS
+========================= */
 hr {
   border: none;
   border-top: 1px solid var(--border);
   margin: 20px;
 }
-.footer-links a {
-  color: var(--accent);
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.footer-links a:hover {
-  background: var(--card);
-  box-shadow: 0 0 10px var(--accent);
-}
 
 /* =========================
    MOBILE APP FRAME
 ========================= */
-
-body {
-  background: #0b1410;
-}
-
-/* Container utama */
 .app-container {
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #0f1c16;
+  background: var(--bg);
   border-left: 1px solid #1f3d2b;
   border-right: 1px solid #1f3d2b;
   box-shadow: 0 0 25px rgba(0, 255, 150, 0.05);
 }
 
-/* Spacing dalam */
 .app-container > * {
   padding-left: 15px;
   padding-right: 15px;
-}
+    }
