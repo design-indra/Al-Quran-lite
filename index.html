@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Al-Qur'an Lite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SEARCH -->
+<div class="top-search">
+  <input type="text" id="search" placeholder="Cari surat...">
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <h1>📖 Al-Qur'an Lite</h1>
+
+  <div class="header-actions">
+    <select id="qari">
+      <option value="alafasy">Mishary Alafasy</option>
+      <option value="husary">Mahmoud Al-Husary</option>
+      <option value="sudais">Abdul Rahman Sudais</option>
+      <option value="shuraym">Saud Ash-Shuraym</option>
+    </select>
+
+    <button id="themeToggle" class="theme-btn">🌙</button>
+  </div>
+</header>
+
+<hr>
+
+<!-- QUOTES -->
+<section class="quotes" id="quotes"></section>
+
+<hr>
+
+<!-- SURAH LIST -->
+<section id="surah-list" class="grid"></section>
+
+<!-- AYAT VIEW -->
+<section id="ayah-view" class="hidden">
+  <button id="back">← Kembali</button>
+  <h2 id="surah-title"></h2>
+  <div id="ayah-list"></div>
+</section>
+
+<hr>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <h3>Baca, Dengarkan, Cari, dan Renungkan Al-Qur'an</h3>
+  <p>
+    Platform ringan untuk membaca, mendengarkan, dan merenungi Al-Qur’an.
+    Terjemahan dan tilawah tersedia untuk semua orang, gratis dan mudah diakses.
+  </p>
+
+  <p class="small">
+    Sebagai Sadaqah Jariyah, aplikasi ini bertujuan mendekatkan hati kepada Al-Qur’an.
+    Data bersumber dari AlQuran Cloud API.
+  </p>
+
+   <div class="footer-links">
+    <a href="about.html">Tentang</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Kontak</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
