@@ -1,0 +1,168 @@
+:root {
+  --bg: #0b1511;
+  --card: #10241b;
+  --border: #2f6b4f;
+  --text: #e6f6ee;
+  --subtext: #baf5cc;
+  --accent: #80d6a7;
+}
+
+body.light {
+  --bg: #f6f9f7;
+  --card: #ffffff;
+  --border: #cdded6;
+  --text: #1c2b24;
+  --subtext: #4f6f61;
+  --accent: #2f8f6b;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+/* SEARCH */
+.top-search {
+  text-align: center;
+  padding: 12px;
+}
+
+.top-search input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+select, .theme-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* QUOTES */
+.quotes {
+  padding: 16px;
+  text-align: center;
+  font-style: italic;
+  color: var(--subtext);
+}
+
+/* GRID SURAH */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 16px var(--accent);
+}
+
+/* AYAT */
+#ayah-view {
+  padding: 16px;
+}
+
+.ayah-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.arab {
+  font-size: 22px;
+  text-align: right;
+}
+
+.translation {
+  color: var(--subtext);
+}
+
+.play-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer .small {
+  font-size: 13px;
+  color: var(--subtext);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  color: var(--accent);
+}
+
+.hidden {
+  display: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px;
+}
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  background: var(--card);
+  box-shadow: 0 0 10px var(--accent);
+}
