@@ -228,3 +228,60 @@ hr {
   padding-left: 15px;
   padding-right: 15px;
     }
+/* CONTAINER HALAMAN PRIVACY */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* CARD SECTION PRIVACY */
+.card-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.card-section p {
+  margin-bottom: 10px;
+}
+
+.card-section:hover {
+  box-shadow: 0 0 12px var(--accent);
+}
+
+/* FOOTER LINKS KOTAK-KOTAK */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.footer-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 12px;
+  background: var(--card);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: 0.3s;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.footer-links a:hover {
+  box-shadow: 0 0 10px var(--accent);
+  transform: translateY(-2px);
+  }
