@@ -71,41 +71,20 @@ backBtn.onclick = () => {
 };
 
 /* =========================
-   SMART SEARCH SURAH
+   SMART SEARCH SURAH (FIXED)
 ========================= */
 
-const searchInput = document.getElementById("searchInput");
+search.oninput = e => {
+  const keyword = e.target.value.toLowerCase().trim();
 
-searchInput.addEventListener("keyup", function (e) {
-  const keyword = this.value.toLowerCase().trim();
-  const surahCards = document.querySelectorAll(".surah-card");
+  const filtered = surahs.filter(s =>
+    s.name.toLowerCase().includes(keyword) ||
+    s.englishName.toLowerCase().includes(keyword) ||
+    s.number.toString().includes(keyword)
+  );
 
-  let firstMatch = null;
-
-  surahCards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-
-    if (text.includes(keyword)) {
-      card.style.display = "block";
-      if (!firstMatch) firstMatch = card;
-    } else {
-      card.style.display = "none";
-    }
-  });
-
-  // Jika tekan ENTER → buka hasil pertama
-  if (e.key === "Enter" && firstMatch) {
-    firstMatch.click();
-    this.value = "";
-  }
-
-  // Jika kosong → tampilkan semua
-  if (keyword === "") {
-    surahCards.forEach(card => {
-      card.style.display = "block";
-    });
-  }
-});
+  renderSurahs(filtered);
+};
 
 qariSelect.onchange = e => currentQari = e.target.value;
 
