@@ -73,9 +73,18 @@ backBtn.onclick = () => {
 /* =========================
    SMART SEARCH SURAH (FIXED)
 ========================= */
+const search = document.getElementById("searchInput");
+const suggestionsBox = document.getElementById("suggestions");
 
-search.oninput = e => {
-  const keyword = e.target.value.toLowerCase().trim();
+search.addEventListener("input", function () {
+  const keyword = this.value.toLowerCase().trim();
+  suggestionsBox.innerHTML = "";
+
+  if (!keyword) {
+    suggestionsBox.style.display = "none";
+    renderSurahs(surahs);
+    return;
+  }
 
   const filtered = surahs.filter(s =>
     s.name.toLowerCase().includes(keyword) ||
@@ -84,7 +93,34 @@ search.oninput = e => {
   );
 
   renderSurahs(filtered);
-};
+
+  if (filtered.length === 0) {
+    suggestionsBox.style.display = "none";
+    return;
+  }
+
+  filtered.slice(0, 7).forEach(s => {
+    const div = document.createElement("div");
+    div.className = "suggestion-item";
+    div.textContent = `${s.number}. ${s.englishName}`;
+    div.onclick = () => {
+      showAyahs(s.number, s.name);
+      suggestionsBox.style.display = "none";
+      search.value = "";
+    };
+    suggestionsBox.appendChild(div);
+  });
+
+  suggestionsBox.style.display = "block";
+});
+
+/* ENTER buka hasil pertama */
+search.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    const first = suggestionsBox.querySelector(".suggestion-item");
+    if (first) first.click();
+  }
+});
 
 qariSelect.onchange = e => currentQari = e.target.value;
 
