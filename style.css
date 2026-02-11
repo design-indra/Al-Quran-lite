@@ -285,3 +285,36 @@ hr {
   box-shadow: 0 0 10px var(--accent);
   transform: translateY(-2px);
   }
+
+/* ABOUT GRID CONTAINER */
+.about-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+/* CARD SECTION ABOUT */
+.about-grid-container .card-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.about-grid-container .card-section:hover {
+  box-shadow: 0 0 12px var(--accent);
+  transform: translateY(-2px);
+}
+
+.about-grid-container .card-section h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.about-grid-container .card-section p,
+.about-grid-container .card-section ul {
+  margin-bottom: 8px;
+}
