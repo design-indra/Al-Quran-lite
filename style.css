@@ -359,3 +359,41 @@ hr {
 .contact-grid-container a:hover {
   text-decoration: underline;
 }
+
+/* BLOG MINI GRID CONTAINER */
+.blog-mini-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+/* CARD SECTION BLOG MINI */
+.blog-mini-grid-container .card-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-mini-grid-container .card-section:hover {
+  box-shadow: 0 0 12px var(--accent);
+  transform: translateY(-2px);
+}
+
+.blog-mini-grid-container .card-section h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.blog-mini-grid-container .card-section p {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
