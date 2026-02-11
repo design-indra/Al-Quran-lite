@@ -70,10 +70,42 @@ backBtn.onclick = () => {
   surahList.classList.remove("hidden");
 };
 
-search.oninput = e => {
-  const v = e.target.value.toLowerCase();
-  renderSurahs(surahs.filter(s => s.name.toLowerCase().includes(v)));
-};
+/* =========================
+   SMART SEARCH SURAH
+========================= */
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function (e) {
+  const keyword = this.value.toLowerCase().trim();
+  const surahCards = document.querySelectorAll(".surah-card");
+
+  let firstMatch = null;
+
+  surahCards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+
+    if (text.includes(keyword)) {
+      card.style.display = "block";
+      if (!firstMatch) firstMatch = card;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // Jika tekan ENTER → buka hasil pertama
+  if (e.key === "Enter" && firstMatch) {
+    firstMatch.click();
+    this.value = "";
+  }
+
+  // Jika kosong → tampilkan semua
+  if (keyword === "") {
+    surahCards.forEach(card => {
+      card.style.display = "block";
+    });
+  }
+});
 
 qariSelect.onchange = e => currentQari = e.target.value;
 
