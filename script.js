@@ -1,5 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+const themeToggle = document.getElementById("themeToggle");
+
+// Set tema awal saat load halaman
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+  themeToggle.textContent = "☀️";
+} else {
+  themeToggle.textContent = "🌙";
+}
+
+// Toggle theme saat tombol diklik
+themeToggle.onclick = () => {
+  document.body.classList.toggle("light");
+  const light = document.body.classList.contains("light");
+  themeToggle.textContent = light ? "☀️" : "🌙";
+  localStorage.setItem("theme", light ? "light" : "dark");
+};
+
 const surahList = document.getElementById("surah-list");
 const ayahView = document.getElementById("ayah-view");
 const ayahList = document.getElementById("ayah-list");
