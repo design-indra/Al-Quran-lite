@@ -166,3 +166,28 @@ hr {
   background: var(--card);
   box-shadow: 0 0 10px var(--accent);
 }
+
+/* =========================
+   MOBILE APP FRAME
+========================= */
+
+body {
+  background: #0b1410;
+}
+
+/* Container utama */
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #0f1c16;
+  border-left: 1px solid #1f3d2b;
+  border-right: 1px solid #1f3d2b;
+  box-shadow: 0 0 25px rgba(0, 255, 150, 0.05);
+}
+
+/* Spacing dalam */
+.app-container > * {
+  padding-left: 15px;
+  padding-right: 15px;
+}
