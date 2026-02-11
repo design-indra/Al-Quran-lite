@@ -7,6 +7,7 @@ const search = document.getElementById("searchInput");
 const qariSelect = document.getElementById("qari");
 const quotesBox = document.getElementById("quotes");
 const themeToggle = document.getElementById("themeToggle");
+const suggestionsBox = document.getElementById("suggestions");
 
 let currentQari = "alafasy";
 let audioPlayer = new Audio();
